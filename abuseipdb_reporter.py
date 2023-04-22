@@ -93,8 +93,10 @@ async def main():
                 num_ip_addresses=len(source_ip_to_comment)
             )
         )
-    except:
-        LOG.exception(msg='An unexpected error occurred')
+    except KeyboardInterrupt:
+        pass
+    except Exception:
+        LOG.exception(msg='An unexpected error occurred.')
 
 if __name__ == '__main__':
     asyncio_run(main())
